@@ -46,7 +46,7 @@ export class Statistic {
       return contagem[a] === MAX && contagem[a] > 1 ? contagem[a] : null;
     });
   }
-  
+
   public median() {
     if (this.data.length === 0) return 0;
 
@@ -58,8 +58,9 @@ export class Statistic {
     return (this.data[half - 1] + this.data[half]) / 2.0;
   }
 
-  public mean() {
-    return this.data.reduce(this.reduce) / this.data.length;
+  public mean(v?: number[]) {
+    const temp = v || this.data;
+    return temp.reduce(this.reduce) / temp.length;
   }
 
   public mode() {
@@ -89,5 +90,30 @@ export class Statistic {
       value += i.value * i.pound;
     });
     return value / pound;
+  }
+
+  public harmonic() {
+    const temp = this.data;
+    const sum = temp.map((i) => 1 / i).reduce(this.reduce);
+    return temp.length / sum;
+  }
+
+  public geometric() {
+    const temp = this.data;
+    const multi = temp.reduce((a, b) => a * b);
+    return Math.pow(multi, temp.length);
+  }
+  public quadratic() {
+    const temp = this.data;
+    const sum = temp.map((i) => Math.pow(i, 2)).reduce(this.reduce);
+    return Math.sqrt(sum / temp.length);
+  }
+
+  public truncate(p: number) {
+    const removeNumber = Math.trunc(this.data.length * (p / 100));
+    this.data.sort(this.sort);
+    return this.mean(
+      this.data.slice(removeNumber, this.data.length - removeNumber)
+    );
   }
 }
