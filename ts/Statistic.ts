@@ -116,4 +116,53 @@ export class Statistic {
       this.data.slice(removeNumber, this.data.length - removeNumber)
     );
   }
+
+  public amplitude() {
+    this.data.sort(this.sort);
+    return this.data[this.data.length - 1] - this.data[0];
+  }
+
+  public variance(
+    sample?: boolean,
+    meanType: 'normal' | 'geometric' | 'harmonic' | 'quadratic' = 'normal'
+  ) {
+    const mean = {
+      normal: this.mean(),
+      geometric: this.geometric(),
+      harmonic: this.harmonic(),
+      quadratic: this.quadratic(),
+    }[meanType];
+    const temp = this.data;
+    const sum = temp.map((i) => Math.pow(i - mean, 2)).reduce(this.reduce);
+    return sum / (sample ? temp.length - 1 : temp.length);
+  }
+
+  public absoluteDeviation(sample?: boolean) {
+    const mean = this.mean();
+    const temp = this.data;
+    const sum = temp.map((i) => Math.abs(i - mean)).reduce(this.reduce);
+    return sum / (sample ? temp.length - 1 : temp.length);
+  }
+
+  public standardDeviation(
+    sample?: boolean,
+    meanType: 'normal' | 'geometric' | 'harmonic' | 'quadratic' = 'normal'
+  ) {
+    return Math.sqrt(this.variance(sample, meanType));
+  }
+
+  public variationCoefficient(
+    sample?: boolean,
+    meanType: 'normal' | 'geometric' | 'harmonic' | 'quadratic' = 'normal'
+  ) {
+    return this.standardDeviation(sample, meanType) / this.mean();
+  }
+
+  public zscore(
+    x: number,
+    sample?: boolean,
+    meanType: 'normal' | 'geometric' | 'harmonic' | 'quadratic' = 'normal'
+  ) {
+    return (x - this.mean()) / this.standardDeviation(sample, meanType);
+  }
 }
