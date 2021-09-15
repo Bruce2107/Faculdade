@@ -101,7 +101,7 @@ export class Statistic {
   public geometric() {
     const temp = this.data;
     const multi = temp.reduce((a, b) => a * b);
-    return Math.pow(multi, temp.length);
+    return Math.pow(multi, 0.2);
   }
   public quadratic() {
     const temp = this.data;
