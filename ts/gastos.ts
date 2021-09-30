@@ -2,13 +2,13 @@ function reduce(a: number, b: number) {
   return a + b;
 }
 
-const nubank = [1017.77, 9513.6].reduce(reduce);
-const santander = [1076.1, 5901.66].reduce(reduce);
-const bb = [69.29].reduce(reduce);
-const itau = [263.35, 2672.45].reduce(reduce);
-const easy = [302.65].reduce(reduce);
-const negative = [-318.75, -860.28, -458.79].reduce(reduce);
-const waiting = [5000, 477.49].reduce(reduce);
+const nubank = [228.11,17.21, 12915.16].reduce(reduce);
+const santander = [1659.11, 4221.89].reduce(reduce);
+const bb = [69.67].reduce(reduce);
+const itau = [55.4535, 2684.65].reduce(reduce);
+const easy = [603.70].reduce(reduce);
+const negative = [-889.26,-267.39].reduce(reduce);
+const waiting = [5000, 477.49,1300,27000].reduce(reduce);
 
 const sum = Number((nubank + santander + bb + itau + easy).toFixed(2));
 
