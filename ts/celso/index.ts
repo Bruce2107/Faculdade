@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-// const csvFilePath = './input.csv';
-// const csv = require('csvtojson');
-// const fs = require('fs');
+const csvFilePath = './input.csv';
+const csv = require('csvtojson');
+const fs = require('fs');
 
-// const writeFile = async () => {
-//   const a = await csv().fromFile(csvFilePath);
-//   fs.writeFileSync('./output.json', JSON.stringify(a));
-// }
+const writeFile = async () => {
+  const a = await csv().fromFile(csvFilePath);
+  fs.writeFileSync('./output.json', JSON.stringify(a));
+}
 
-// writeFile()
+writeFile()
 
 // if (typeof 'a' === '')
 // const a = (i) => {
