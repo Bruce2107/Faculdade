@@ -83,6 +83,10 @@ const a: A = {
   sum: 2,
 };
 
+function abc<K extends keyof T, T = A>(field: K, value: T[K]) {}
+
+abc("active", false);
+
 interface Custom<Values> {
   abc: <K extends keyof Values>(field: K, value: Values[K]) => void;
 }
