@@ -1,0 +1,31 @@
+MARKETING
+          VENDAS                      COMPRAS
+PRODUCAO  DISTRUBUICAO  FATURAMENTO   RECP MATERIAS CAP ESTOQUE
+                        CAR
+
+
+planejado por -> isso
+VENDAS -> marketing
+RH -> marketing
+PRODUCAO -> marketing, VENDAS
+COMPRAS -> marketing
+DISTRUBUICAO -> vendas
+RECP DE MATERIAIS -> compras
+CONTAS A PAGAR -> compras
+ESTOQUE -> compras
+CONTAS A RECEBER -> vendas
+FUNCIONARIOS -> rh
+PAGAMENTO PESSOAL -> rh
+
+planeja -> isso
+MARKETING -> rh, vendas, compras, producao
+VENDAS -> producao, distribuicao, faturamento
+COMPRAS -> recp materias, contas a pagar, estoque
+
+
+
+
+PLANEJAMENTO FINANCEIRO -> ?????vendas e compras
+POS VENDA???? -> marketing, vendas
+
+ANA;;PEC

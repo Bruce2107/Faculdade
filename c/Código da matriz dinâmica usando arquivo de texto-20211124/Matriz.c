@@ -116,5 +116,6 @@ void DFS(Matriz m, int init) {
 			}
 		}
 	}
-	
+	desaloca_pilha(&p);
+	free(status);
 }
