@@ -1,4 +1,4 @@
-package Lista2.Quinto;
+package Prova.Tres;
 
 public class Quadrado {
     private double medidaLados;

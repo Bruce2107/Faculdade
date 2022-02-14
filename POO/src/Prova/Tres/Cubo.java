@@ -1,4 +1,4 @@
-package Lista2.Quinto;
+package Prova.Tres;
 
 public class Cubo extends Quadrado {
     public Cubo(double ml) {
