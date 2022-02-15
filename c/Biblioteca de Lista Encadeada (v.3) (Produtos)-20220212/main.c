@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
 				break;
 			}
 			case 7: {
+				salva_arquivo(&l1);
 				printf("Salvando as musicas cadastradas...\n");
 				printf("Saindo...\n");
 
