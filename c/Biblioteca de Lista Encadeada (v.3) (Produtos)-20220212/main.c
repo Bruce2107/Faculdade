@@ -7,9 +7,15 @@
 int main(int argc, char *argv[]) {
 	Lista l1;
 	inicializa_lista( &l1, sizeof( Musica ) );
+	// Musica m1 = {"teste", 1, "pop", {"edu", "br"}, {1, 1, 1900}};
+	// Musica m3 = {"test2e", 1, "pop", {"edu", "br"}, {1, 1, 1900}};
+	// Musica m2 = {"teste", 1, "pop", {"vini", "br"}, {1, 1, 1900}};
+	// insere_fim(&l1, &m1);
+	// insere_fim(&l1, &m3);
+	// insere_fim(&l1, &m2);
 	Musica musica;
-
-	int escolha, min, max;
+	carrega_arquivo(&l1);
+	int escolha;
 
 	do {
 		printf("O que voce deseja fazer?\n1. Cadastrar\n2. Mostrar todas as musicas\n3. Buscar músicas por nome\n4. Buscar músicas por artista\n5. Buscar músicas por estilo\n6. Remover música\n7. Finalizar programa\n");
@@ -52,7 +58,7 @@ int main(int argc, char *argv[]) {
 				char aux[30];
 				printf("Digite um estilo para buscar: ");
 				scanf(" %[^\n]", aux);
-				busca_musica_por_artista(&l1, aux);
+				busca_musica_por_estilo(&l1, aux);
 				
 				break;
 			}

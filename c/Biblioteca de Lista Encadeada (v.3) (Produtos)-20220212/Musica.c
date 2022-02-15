@@ -72,46 +72,47 @@ void busca_musica_por_nome(Lista *l, char *nome_musica ){
 	if(lista_vazia(nomes))
 		printf("\nMusica nao encontrada!\n");
 	else{
-		//loop
-		// busca 1 musica da lista de nomes por -> artista + nome
-		// retorna a posicao na lista l
-		// int qnt = nomes.qtd;
-		mostra_lista(nomes, mostra_music);
 		Musica auxMusica;
-		for (int i = 0; le_valor(nomes,&auxMusica,i) != ERRO_POS_INVALIDA; i++) {
-			// mostra_musica(auxMusica);
-			// mostra_musica((Musica) nomes.cabeca[i].info);
-			// int idx = busca((*l), nomes.cabeca[i].info, compara_musica);
-			// Musica m;
-			// printf("Encontrada no indice %d: ", idx);
-			// le_valor( (*l), &m, idx );
-			// mostra_musica(m);
+		int idx;
+		for (int i = 0; le_valor(nomes, &idx, i) != ERRO_POS_INVALIDA; i++){
+			printf("[%d]: ", idx);
+			le_valor((*l), &auxMusica, idx);
+			mostra_musica(auxMusica);
 		}
 	}
+	limpa_lista(&nomes);
 }
 
 void busca_musica_por_artista(Lista *l, char *nome_artista ){
-	int idx = busca((*l), nome_artista, compara_artista_musica);
-	if( idx == -1 )
+	Lista artistas = busca_varios((*l), nome_artista, compara_artista_musica);
+	if(lista_vazia(artistas))
 		printf("\nMusica nao encontrada!\n");
 	else{
-		Musica m;
-		printf("Encontrada no indice %d: ", idx);
-		le_valor( (*l), &m, idx );
-		mostra_musica(m);
+		Musica auxMusica;
+		int idx;
+		for (int i = 0; le_valor(artistas, &idx, i) != ERRO_POS_INVALIDA; i++){
+			printf("[%d]: ", idx);
+			le_valor((*l), &auxMusica, idx);
+			mostra_musica(auxMusica);
+		}
 	}
+	limpa_lista(&artistas);
 }
 
 void busca_musica_por_estilo(Lista *l, char *nome_estilo ){
-	int idx = busca((*l), nome_estilo, compara_estilo);
-	if( idx == -1 )
+	Lista estilos = busca_varios((*l), nome_estilo, compara_estilo);
+	if(lista_vazia(estilos))
 		printf("\nMusica nao encontrada!\n");
 	else{
-		Musica m;
-		printf("Encontrada no indice %d: ", idx);
-		le_valor( (*l), &m, idx );
-		mostra_musica(m);
+		Musica auxMusica;
+		int idx;
+		for (int i = 0; le_valor(estilos, &idx, i) != ERRO_POS_INVALIDA; i++){
+			printf("[%d]: ", idx);
+			le_valor((*l), &auxMusica, idx);
+			mostra_musica(auxMusica);
+		}
 	}
+	limpa_lista(&estilos);
 }
 
 void mostra_music( void *x ){
@@ -120,16 +121,13 @@ void mostra_music( void *x ){
 }
 
 int insere_musica(Lista *l, Musica *m) {
-	Lista indices = busca_varios( (*l), m, compara_nome_musica);
-	if( lista_vazia( indices ) ) {
+	Lista indices = busca_varios((*l), m, compara_musica);
+	if (lista_vazia(indices)){
 		insere_ordem(l, m, compara_nome_musica);
+		limpa_lista(&indices);
 		return 1;
 	}
-
-	if(lista_vazia(busca_varios(indices,m,compara_artista_musica))) {
-		insere_ordem(l, m, compara_nome_musica);
-		return 1;
-	}
+	limpa_lista(&indices);
 	return 0;	
 }
 
@@ -159,7 +157,6 @@ int remove_musica(Lista *l,int pos) {
 	return 0;
 }
 
-
 FILE* inicializa_arquivo(char* mode){
   FILE *f;
   f = fopen(FILENAME, mode);
@@ -172,28 +169,20 @@ FILE* inicializa_arquivo(char* mode){
   return f;
 }
 
-int carrega_arquivo(Musica **pV, int *pN ){
+void carrega_arquivo(Lista *l){
 	FILE *f = inicializa_arquivo("rt");
-	int n;
-	fscanf(f, "%d", &n);
-	Musica *v = malloc( sizeof(Musica) * n );
-	int i;
-	for( i = 0 ; i < n ; i++ ){
-		fscanf(f, " %[^\n]", &v[i].nome_musica);
-		fscanf(f, " %[^\n]", v[i].estilo);
-		fscanf(f, "%d", &v[i].duracao);
+	Musica musica;
+	while(fread(&musica, sizeof(Musica), 1, f)){
+		insere_fim(l, &musica);
 	}
-	fclose( f );
-	*pV = v;
-	*pN = n;
-	return 1; // Sucesso!
+	fclose(f);
 } 
 
-int salva_arquivo(Lista *l){
- 	FILE *file = inicializa_arquivo("r+");
-	Musica newMusic;
-	for (int i = 0; le_valor((*l),&newMusic,i) != ERRO_POS_INVALIDA;i++) {
-		fwrite(&newMusic, sizeof(Musica), 1, file);
+void salva_arquivo(Lista *l){
+ 	FILE *file = inicializa_arquivo("w+");
+	Musica auxMusica;
+	for (int i = 0; le_valor((*l), &auxMusica, i) != ERRO_POS_INVALIDA; i++){
+		fwrite(&auxMusica, sizeof(Musica), 1, file);
 	}
 
 	fclose(file);

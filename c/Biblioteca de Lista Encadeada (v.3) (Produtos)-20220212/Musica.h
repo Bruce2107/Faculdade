@@ -22,6 +22,7 @@ void le_musica( Musica *p );
 void mostra_musica( Musica x );
 void busca_musica_por_nome(Lista *l, char *nome_musica );
 void busca_musica_por_artista(Lista *l, char *nome_artista);
+void busca_musica_por_estilo(Lista *l, char *nome_estilo);
 int insere_musica(Lista *l, Musica *m);
 int compara_nome_musica(void *x, void *y);
 int compara_artista_musica(void *x, void *y);
@@ -30,6 +31,6 @@ void mostra_music(void *x);
 int remove_musica(Lista *l, int pos);
 int valida_data_musica(Musica *m);
 
-int carrega_arquivo(Musica **pV, int *pN );
+void carrega_arquivo(Lista *l);
 FILE *inicializa_arquivo(char *mode);
-int salva_arquivo(Lista *l);
+void salva_arquivo(Lista *l);
