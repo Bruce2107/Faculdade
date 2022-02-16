@@ -58,7 +58,7 @@ int compara_artista_musica( void *x, void *y ){
 
 int compara_musica(void *x, void *y) {
 	Musica *a = x, *b = y;
-	return strcmp(a->artista.nome, b->artista.nome) && strcmp(a->nome_musica, b->nome_musica);
+	return strcmp(a->artista.nome, b->artista.nome) | strcmp(a->nome_musica, b->nome_musica);
 }
 
 int compara_estilo( void *x, void *y ){
