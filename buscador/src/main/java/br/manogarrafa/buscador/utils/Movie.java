@@ -1,7 +1,5 @@
 package br.manogarrafa.buscador.utils;
 
-import java.net.URL;
-
 public class Movie {
     public String name;
     public String releaseDate;

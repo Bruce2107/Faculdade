@@ -2,9 +2,9 @@ package br.manogarrafa.buscador.utils;
 
 import com.google.gson.*;
 
-import java.net.URL;
-
 public class MovieParser {
+    private MovieParser() {}
+
     public static Movie parse(String json) {
         Movie filme = new Movie();
         JsonElement elm = JsonParser.parseString(json);
@@ -24,15 +24,5 @@ public class MovieParser {
         }
 
         return filme;
-    }
-
-    public static String getUrlPoster(String json) {
-        String url = null;
-        JsonElement elm = JsonParser.parseString(json);
-        if(elm.isJsonObject()) {
-            JsonObject obj = elm.getAsJsonObject();
-            url = obj.get("Poster").getAsString();
-        }
-        return url;
     }
 }

@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
@@ -18,7 +17,7 @@ public class SearchController {
     @FXML private Text searchMessage;
 
     @FXML
-    protected void onSearch() throws IOException {
+    protected void onSearch() {
         if(!searchField.getText().equals("")) {
             try {
                 Stage stage = (Stage) searchBTN.getScene().getWindow();
@@ -34,6 +33,7 @@ public class SearchController {
                     searchField.requestFocus();
                 }
             }catch (Exception e) {
+                searchMessage.setText("Houve um erro ao buscar seu filme");
                 System.out.println(e);
             }
         }else {

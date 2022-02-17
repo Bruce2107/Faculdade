@@ -1,6 +1,5 @@
 package br.manogarrafa.buscador.utils;
 
-import br.manogarrafa.buscador.MovieController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

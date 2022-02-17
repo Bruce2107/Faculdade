@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<FlowPane fx:id="screen" prefHeight="400.0" prefWidth="700.0" styleClass="screen" stylesheets="@css/common.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.manogarrafa.buscador.SearchController">
+<FlowPane fx:id="screen" prefHeight="500.0" prefWidth="700.0" styleClass="screen" stylesheets="@css/common.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.manogarrafa.buscador.SearchController">
    <children>
-      <FlowPane fx:id="searchFlow" prefHeight="300.0" prefWidth="700.0" vgap="100.0">
+      <FlowPane fx:id="searchFlow" prefHeight="400.0" prefWidth="700.0" vgap="100.0">
          <children>
             <TextField fx:id="searchField" prefWidth="600.0" styleClass="input" stylesheets="@css/search.css">
                <FlowPane.margin>
@@ -18,11 +19,17 @@
             </TextField>
             <FlowPane hgap="249.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="600.0" stylesheets="@css/search.css">
                <children>
-                  <Button fx:id="searchBTN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onSearch" prefHeight="48.0" prefWidth="175.0" text="PESQUISAR" />
+                  <Button fx:id="searchBTN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onSearch" prefHeight="48.0" prefWidth="175.0" text="PESQUISAR">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                   <Button fx:id="cleanBTN" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClean" prefHeight="48.0" prefWidth="175.0" text="LIMPAR">
                      <FlowPane.margin>
                         <Insets />
                      </FlowPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
                <FlowPane.margin>
@@ -33,6 +40,9 @@
          <padding>
             <Insets bottom="50.0" />
          </padding>
+         <FlowPane.margin>
+            <Insets top="50.0" />
+         </FlowPane.margin>
       </FlowPane>
       <Text fx:id="searchMessage" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="700.0">
          <FlowPane.margin>

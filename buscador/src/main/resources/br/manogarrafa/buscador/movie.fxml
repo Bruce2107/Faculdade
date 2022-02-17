@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" styleClass="screen" stylesheets="@css/common.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.manogarrafa.buscador.MovieController">
+<VBox fx:id="screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" styleClass="screen" stylesheets="@css/common.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.manogarrafa.buscador.MovieController">
     <FlowPane alignment="TOP_CENTER" hgap="128.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="panel" stylesheets="@css/movie.css">
       <ImageView fx:id="moviePoster" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
       <TextFlow id="title" fx:id="movieTitle" prefHeight="48.0" prefWidth="500.0" stylesheets="@css/movie.css" textAlignment="CENTER">
@@ -46,4 +48,12 @@
             <Insets left="50.0" />
         </VBox.margin>
     </FlowPane>
+   <Button mnemonicParsing="false" onAction="#goBack" prefWidth="200.0" stylesheets="@css/search.css" text="Pequisar outro" textAlignment="CENTER">
+      <VBox.margin>
+         <Insets left="250.0" top="25.0" />
+      </VBox.margin>
+       <cursor>
+           <Cursor fx:constant="HAND" />
+       </cursor>
+   </Button>
 </VBox>

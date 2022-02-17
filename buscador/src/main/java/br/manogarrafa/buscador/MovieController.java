@@ -1,5 +1,6 @@
 package br.manogarrafa.buscador;
 
+import br.manogarrafa.buscador.utils.ChangeScene;
 import br.manogarrafa.buscador.utils.Movie;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,10 +9,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -39,6 +42,13 @@ public class MovieController implements Initializable {
     @FXML
     private Text movieRelease;
 
+
+    @FXML
+    public void goBack() throws IOException {
+        Stage stage = (Stage) movieRated.getScene().getWindow();
+        URL parent = Objects.requireNonNull(getClass().getResource("search.fxml"));
+        new ChangeScene().changeRoute(stage, parent);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Movie movie = Search.getMovie();
