@@ -141,7 +141,7 @@ int remove_musica(Lista *l,int pos) {
 	Musica m;
 	int res;
 
-	if(pos > l->qtd) {
+	if(pos > l->qtd - 1) {
 		printf("Posição inválida. A música não será apagada!\n");
 		return 0;
 	}
