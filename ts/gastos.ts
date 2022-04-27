@@ -5,8 +5,8 @@ function reduce(a: number, b: number) {
 const nubank = [370.85, 35815.35].reduce(reduce);
 const santander = [21.5].reduce(reduce);
 const bb = [72.06].reduce(reduce);
-const itau = [1331.86, 2756.08].reduce(reduce);
-const easy = [893.89].reduce(reduce);
+const itau = [12.6].reduce(reduce);
+const easy = [7621.63].reduce(reduce);
 const negative = [927.62,227.38,139.59, 1214.14,341.74*2].map((i) => -i).reduce(reduce);
 const waiting = [5000, 5000, 1300,2000].reduce(reduce); // carro, celio, licenciamento
 
