@@ -51,7 +51,21 @@
     const config = {
       type: 'line',
       data: data,
-      options: {}
+      options: {
+        scales: {
+          y: {
+            title: {
+              display: true,
+              text: 'Comparações'
+            }
+          }, x: {
+            title: {
+              display: true,
+              text: 'Quantidade de elementos'
+            }
+          }
+        }
+      }
     };
   </script>
   <script>
