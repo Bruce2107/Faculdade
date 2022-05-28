@@ -1,0 +1,30 @@
+Binaria
+{ size: 10, key: 44, binaria: 7 }
+{ size: 100, key: 44, binaria: 19 }
+{ size: 1000, key: 44, binaria: 14 }
+{ size: 10000, key: 44, binaria: 11 }
+{ size: 100000, key: 44, binaria: 18 }
+Binaria Recursiva
+{ size: 10, key: 44, binariaRecursiva: 10 }
+{ size: 100, key: 44, binariaRecursiva: 19 }
+{ size: 1000, key: 44, binariaRecursiva: 28 }
+{ size: 10000, key: 44, binariaRecursiva: 40 }
+{ size: 100000, key: 44, binariaRecursiva: 49 }
+Sentinela
+{ size: 10, key: 44, sentinela: 11 }
+{ size: 100, key: 44, sentinela: 47 }
+{ size: 1000, key: 44, sentinela: 455 }
+{ size: 10000, key: 44, sentinela: 4339 }
+{ size: 100000, key: 44, sentinela: 44091 }
+Sequencial
+{ size: 10, key: 44, sequencial: 20 }
+{ size: 100, key: 44, sequencial: 94 }
+{ size: 1000, key: 44, sequencial: 910 }
+{ size: 10000, key: 44, sequencial: 8678 }
+{ size: 100000, key: 44, sequencial: 88182 }
+Interpolacao
+{ size: 10, key: 44, interpolacao: 6 }
+{ size: 100, key: 44, interpolacao: 6 }
+{ size: 1000, key: 44, interpolacao: 6 }
+{ size: 10000, key: 44, interpolacao: 3 }
+{ size: 100000, key: 44, interpolacao: 3 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="height: 90vh;width: 90vw;">
+    <canvas id="myChart"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const labels = [
+      10, 30, 50, 70, 90,
+    ];
+
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Binaria',
+        backgroundColor: '#423E3B',
+        borderColor: '#423E3B',
+        data: [12, 14, 12, 14, 18],
+      }, {
+        label: 'Binaria Recursiva',
+        backgroundColor: '#FF2E00',
+        borderColor: '#FF2E00',
+        data: [10, 16, 16, 19, 19],
+      }, {
+        label: 'Sentinela',
+        backgroundColor: '#FEA82F',
+        borderColor: '#FEA82F',
+        data: [11, 31, 47, 67, 89],
+      }, {
+        label: 'Sequencial',
+        backgroundColor: '#FFFECB',
+        borderColor: '#FFFECB',
+        data: [20, 60, 94, 134, 178],
+      }, {
+        label: 'Interpolacao',
+        backgroundColor: '#5448C8',
+        borderColor: '#5448C8',
+        data: [3, 3, 3, 3, 3],
+      }]
+    };
+
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+  </script>
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
+</body>
+
+</html>
