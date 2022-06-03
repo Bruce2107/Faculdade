@@ -1,5 +1,6 @@
 const heightA = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
 const heightB = [4, 2, 0, 3, 2, 5];
+const heightC = [4, 2, 3];
 function trap(height: number[]): number {
   let count = 0;
   let ref = 0;
@@ -41,4 +42,5 @@ function trap(height: number[]): number {
 
 console.assert(trap(heightA) === 6);
 console.assert(trap(heightB) === 9);
+console.assert(trap(heightC) === 1);
 // https://leetcode.com/problems/trapping-rain-water/solution/
