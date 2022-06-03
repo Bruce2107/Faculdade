@@ -41,3 +41,4 @@ function trap(height: number[]): number {
 
 console.assert(trap(heightA) === 6);
 console.assert(trap(heightB) === 9);
+// https://leetcode.com/problems/trapping-rain-water/solution/
