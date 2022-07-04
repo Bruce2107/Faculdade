@@ -2,12 +2,12 @@ function reduce(a: number, b: number) {
   return a + b;
 }
 
-const nubank = [5.62, 24481.95].reduce(reduce);
-const santander = [676.98].reduce(reduce);
+const nubank = [100.2, 22352.67].reduce(reduce);
+const santander = [0].reduce(reduce);
 const bb = [72.47].reduce(reduce);
-const itau = [87.55].reduce(reduce);
-const easy = [10029.98].reduce(reduce);
-const negative = [4000 - 1326.94, 2730 - 1470.77, 11000 - 8859.13]
+const itau = [0].reduce(reduce);
+const easy = [11075.61].reduce(reduce);
+const negative = [1526.31, 2730 - 2374.68, 11000 - 9619.66, 2000 - 1102.33]
   .map((i) => -i)
   .reduce(reduce);
 const waiting = [5000, 3000, 1300, 2000].reduce(reduce); // carro, celio, licenciamento
