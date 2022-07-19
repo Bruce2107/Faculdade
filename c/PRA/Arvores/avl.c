@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "util.h"
 
-long count = 0;
+int count = 0;
 
 typedef struct no {
   struct no* pai;
@@ -272,26 +272,47 @@ No* rdd(Arvore* arvore, No* no) {
   return rsd(arvore, no);
 }
 
+void deallocate(No* p){
+  if(p==NULL)
+    return;
+
+  deallocate(p->direita);
+  deallocate(p->esquerda);
+
+  free(p);
+}
+
 int main() {
 
-  int size = 10;
-  long sum = 0;
-  for(int i = 1; i <= 1000; i++) { // quantidade de chaves
-    //Caso médio 
-    while(size >= 0) { // quantidade para media
+  int size = 10, sum = 0;
+  for (int i = 0; i <= 11; i++)
+  { // quantidade de chaves
+    // Caso médio
+    while(size > 0) { // quantidade para media
       count = 0;
       Arvore* arvore = criar();
       int * values = generateRandomArray(i);
       for(int j = 0; j < i; j++) {
         adicionar(arvore, values[j]);
       }
-      // free(values);
-      // free(arvore);
       sum += count;
       size--;
     }
     size = 10;
     float result = sum / 10;
+    sum = 0;
     printf("AVL;%d;%.0f\n", i, result);
   }
+
+  // for (int i = 1; i <= 1000; i++) {
+  //   Arvore* a = criar();
+  //   count = 0;
+  //   int *values = generateOrderedArray(i);
+  //   for(int j = 0; j < i; j++) {
+  //     adicionar(a, values[j]);
+  //   }
+  //   // free(values);
+  //   // free(a);
+  //   printf("AVL;%d;%d\n", i, count);
+  // }
 }

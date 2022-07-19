@@ -194,7 +194,7 @@ int main() {
   int size = 10, sum = 0;
   for(int i = 1; i <= 1000; i++) { // quantidade de chaves
     //Caso médio 
-    while(size >= 0) { // quantidade para media
+    while(size > 0) { // quantidade para media
       ArvoreB* arvore = criaArvore(5);
       count = 0;
       int * values = generateRandomArray(i);
@@ -208,6 +208,7 @@ int main() {
     }
     size = 10;
     float result = sum / 10;
+    sum = 0;
     printf("B;%d;%.0f\n", i, result);
   }
   // for (int i = 1; i <= 1000; i++) {
@@ -217,8 +218,8 @@ int main() {
   //   for(int j = 0; j < i; j++) {
   //     adicionaChave(arvore, values[j]);
   //   }
-  //   free(values);
-  //   free(arvore);
+  //   // free(values);
+  //   // free(arvore);
   //   printf("B;%d;%d\n", i, count);
   // }
 }

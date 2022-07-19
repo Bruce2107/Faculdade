@@ -233,34 +233,35 @@ void rotacionarDireita(Arvore* arvore, No* no) {
 }
 
 int main() {
-  // int size = 10, sum = 0;
-  // for(int i = 1; i <= 1000; i++) { // quantidade de chaves
-  //   //Caso médio 
-  //   while(size >= 0) { // quantidade para media
-  //     Arvore* a = criar();
-  //     count = 0;
-  //     int * values = generateRandomArray(i);
-  //     for(int j = 0; j < i; j++) {
-  //       adicionar(a, values[j]);
-  //     }
-  //     sum += count; 
-  //     size--;
-  //     free(values);
-  //     free(a);
-  //   }
-  //   size = 10;
-  //   float result = sum / 10;
-  //   printf("RB;%d;%.0f\n", i, result);
-  // }
-  for (int i = 1; i <= 1000; i++) {
-    Arvore* a = criar();
-    count = 0;
-    int *values = generateOrderedArrayDescending(i);
-    for(int j = 0; j < i; j++) {
-      adicionar(a, values[j]);
+  int size = 10, sum = 0;
+  for(int i = 1; i <= 1000; i++) { // quantidade de chaves
+    //Caso médio 
+    while(size > 0) { // quantidade para media
+      Arvore* a = criar();
+      count = 0;
+      int * values = generateRandomArray(i);
+      for(int j = 0; j < i; j++) {
+        adicionar(a, values[j]);
+      }
+      sum += count; 
+      size--;
+      free(values);
+      free(a);
     }
-    free(values);
-    free(a);
-    printf("RB;%d;%d\n", i, count);
+    size = 10;
+    float result = sum / 10;
+    sum = 0;
+    printf("RB;%d;%.0f\n", i, result);
   }
+  // for (int i = 1; i <= 1000; i++) {
+  //   Arvore* a = criar();
+  //   count = 0;
+  //   int *values = generateOrderedArrayDescending(i);
+  //   for(int j = 0; j < i; j++) {
+  //     adicionar(a, values[j]);
+  //   }
+  //   // free(values);
+  //   // free(a);
+  //   printf("RB;%d;%d\n", i, count);
+  // }
 }
