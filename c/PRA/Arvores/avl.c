@@ -4,6 +4,7 @@
 #define SIZE 10
 
 int count = 0;
+int alter = 0;
 
 typedef struct no
 {
@@ -28,7 +29,12 @@ No *rde(Arvore *, No *);
 
 Arvore *criar()
 {
+  if (alter == 304)
+  {
+    printf("hello");
+  }
   count++;
+  alter++;
   Arvore *arvore = malloc(sizeof(Arvore));
   arvore->raiz = NULL;
 
@@ -361,6 +367,7 @@ int main()
 {
 
   int size = SIZE, sum = 0;
+  int log = 0;
   for (int i = 1; i <= 1000; i++)
   { // quantidade de chaves
     // Caso médio
@@ -377,6 +384,7 @@ int main()
       }
       for (int j = 0; j < i; j++)
       {
+        log = values[j];
         adicionar(arvore, values[j]);
       }
       sum += count;
