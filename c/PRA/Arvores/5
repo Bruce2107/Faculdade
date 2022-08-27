@@ -1,0 +1,38 @@
+Caso 1: Arvore vazia
+  Após adicionar o primeiro nó, recolorir ele para PRETO
+    Nó raíz deve ser PRETO
+  Ex:
+    21(V) -> 21(P)
+     / \     / \
+    P   P   P   P 
+
+Caso 2: Pai, Filho e Tio vermelhos
+  Recolorir Pai, Tio, Avô
+    Todo filho de um nó VERMELHO deve ser PRETO
+  Aplicar recursão para o nó Avô
+    Nó raíz deve ser PRETO
+
+
+    14(P)     ->    14(V)        ->   14(P)
+  5(V) 37(V)      5(P) 37(P)        5(V) 37(V)
+3(V)            3(V)              3(P)
+
+
+Caso 3: Pai e Filho vermelhos, Tio PRETO
+  Todo filho de um nó VERMELHO deve ser PRETO
+  Recolorir pai e Avô
+
+  Rotacionar o avô à direira
+    Caso 1
+
+    10(P) 
+  9(V)  11(P)
+8(V)
+
+    10(V)
+  9(P) 11(P)
+8(V)
+
+    9(P)
+  8(V) 10(V)
+          11(P)

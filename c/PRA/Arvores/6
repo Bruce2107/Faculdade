@@ -1,0 +1,8 @@
+  S1 -> São autobalanceadas
+  S2 -> Possuem a mesma complexidade de inserção
+  S3 -> Possuem a mesma complexidade na busca de um valor
+  D1 -> RN possui cores (Preta e Vermelha)
+  D2 -> B utiliza a memória secundária
+  D3 -> Cada nó da RN possui somente 1 valor
+  D4 -> RN possui restrições "intrínsecas" para a altura
+  D5 -> Na B todos os nós folhas estão na mesma altura

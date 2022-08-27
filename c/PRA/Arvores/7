@@ -1,0 +1,19 @@
+1. Usar a busca binaria para localizar a posição do valor
+2. Inserir na posição encontrada
+3. Se houver estouro na quantidade de valores no nó, iniciar divisão
+3.1. Dividir em dois nós, "tirando o central"
+3.2. Alterar o/os pais do novo nó
+3.3. Promover o "central", caso haja um novo estouro, voltar para o inicio do passo 3
+3.3.1 Se o estouro for na raíz, criar uma nova com o valor "central"
+
+
+Exemplo: Ordem 2, valores: 20, 15, 10, 3, 8,
+
+inserir (20) -> [20]
+inserir (15) -> [15|20]
+inserir (10) -> [10|15|20]
+inserir (03) -> [3|10|15|20]
+inserir (08), terá estouro -> [3|8|10|15|20]
+separar o "central" e criar dois novos nós -> (10) [3|8] [15|20]
+promover o "central" -> [10]
+                      [3|8] [15|20]
