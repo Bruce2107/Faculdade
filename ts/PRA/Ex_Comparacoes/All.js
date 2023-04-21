@@ -14,20 +14,20 @@ const Arrays = (() => {
 })();
 
 const resultsBinaria = (() => {
-  console.log('Binaria');
-  Arrays.forEach((item) => {
-    const { size, vector, key } = item;
-    const result = {
-      size,
-      key,
-      binaria: `(${size}, ${binaria(
-        key,
-        vector.sort((a, b) => a - b),
-        size
-      )})`,
-    };
-    console.log(result);
-  });
+    console.log('Binaria');
+    Arrays.forEach((item) => {
+        const {size, vector, key} = item;
+        const result = {
+            size,
+            key,
+            binaria: `(${size}, ${binaria(
+                key,
+                vector.sort((a, b) => a - b),
+                size
+            )})`,
+        };
+        console.log(result);
+    });
 })();
 
 const resultsBinariaRecursiva = (() => {
@@ -86,9 +86,7 @@ const resultInterpolacao = (() => {
       size,
       key,
       interpolacao: `(${size}, ${interpolacao(
-        key,
-        vector.sort((a, b) => a - b),
-        size
+        {key: key, vector: vector.sort((a, b) => a - b), length: size}
       )})`,
     };
     console.log(result);
@@ -121,7 +119,7 @@ function binariaRecursiva(key, vector, init, end, count) {
   count++;
   if (init > end) return [-1, count];
   count++;
-  if (vector[m] == key) return [m, count];
+  if (vector[m] === key) return [m, count];
   else {
     count++;
     if (key < vector[m])
@@ -129,11 +127,8 @@ function binariaRecursiva(key, vector, init, end, count) {
     else return binariaRecursiva(key, vector, m + 1, end, count);
   }
 }
-function interpolacao(key, vector, length) {
-  let init = 0,
-    middle,
-    end = length - 1,
-    count = 0;
+function interpolacao({key, vector, length}) {
+   let init = 0; let middle; let end = length - 1; let count = 0;
   while (init <= end) {
     count++;
     middle =
@@ -154,7 +149,7 @@ function sentinela(key, vector, length) {
   let i = 0,
     count = 0;
   vector[length] = key;
-  while (vector[i] != key) {
+  while (vector[i] !== key) {
     i++;
     count++;
   }
@@ -164,7 +159,7 @@ function sequencial(key, vector, length) {
   let count = 0;
   for (let i = 0; i < length; i++) {
     count += 2;
-    if (vector[i] == key) return count;
+    if (vector[i] === key) return count;
   }
   return count;
 }

@@ -15,17 +15,17 @@ const results = (() => {
     result.push({
       l: size,
       c: binaria(
-        key,
-        vector.sort((a, b) => a - b),
-        size
+        {key: key, vector: vector.sort((a, b) => a - b), length: size}
       ),
     });
   });
   return result;
 })();
 
-function binaria(key, vector, length) {
-  vector.sort((a, b) => a - b);
+function binaria({key, vector, length}) {
+  vector.sort(function (a, b) {
+      return a - b;
+  });
   let i = 0,
     m,
     f = length - 1;

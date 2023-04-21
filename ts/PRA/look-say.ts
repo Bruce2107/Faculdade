@@ -28,7 +28,6 @@ function umFor(n: Array<string>): string {
     } else {
       result = result.concat(`${count}${n[i - 1]}`);
       count = 1;
-      continue;
     }
   }
   result = result.concat(`${count}${n[n.length - 1]}`);
