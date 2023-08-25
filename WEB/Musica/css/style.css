@@ -1,0 +1,112 @@
+body {
+  box-sizing: border-box;
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+header nav {
+  text-align: center;
+  padding: 12px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+header nav a:hover {
+  background-color: #ddd;
+  color: #333;
+}
+
+section {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+.card a,
+.card a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card figure {
+  margin: 0;
+  padding: 10px;
+}
+
+.card figcaption {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.card p {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 200px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+button[type='button'] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  text-transform: lowercase;
+  font-weight: 300;
+}
+
+button[type='button']:hover {
+  background-color: #ddd;
+  color: #333;
+}
