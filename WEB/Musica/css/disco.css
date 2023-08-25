@@ -1,0 +1,86 @@
+.disco {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 32px;
+}
+
+.disco figure {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disco img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.disco figcaption {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.disco .data {
+  margin-top: 10px;
+}
+
+.disco .data:nth-child(:first-child) {
+  margin-top: 0;
+}
+
+.buttons {
+  width: 80%;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+tr td:nth-child(2) {
+  text-align: center;
+}
+
+section.main-content {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+section .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section#streaming {
+  margin-top: 20px;
+  width: 90%;
+}

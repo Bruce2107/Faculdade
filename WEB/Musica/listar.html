@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" media="screen" href="./css/style.css">
   <title>Lista de discos</title>
 </head>
 
@@ -15,23 +16,28 @@
       <a href="cadastro.html">Cadastrar</a>
     </nav>
   </header>
-  <section>
-    <ul>
-      <li>
-        <div>
-          <a href="disco.html">
-            <figure>
-              <img src="./assests/cover_nina_simone.jpg" alt="Capa do album Nina Simone at town hall" width="64px">
-              <figcaption>Nina Simone at town hall</figcaption>
-            </figure>
-            <p>Nina Simone</p>
-          </a>
+  <main>
+    <section>
+      <div class="list-count">
+        <sub>Quantidade de discos na coleção: 1</sub>
+      </div>
+    </section>
+    <article>
+      <div class="card">
+        <a href="disco.html">
+          <figure>
+            <img src="./assests/cover_nina_simone.jpg" alt="Capa do album Nina Simone at town hall" width="64px">
+            <figcaption>Nina Simone at town hall</figcaption>
+          </figure>
+          <p>Nina Simone</p>
+        </a>
+        <div class="buttons">
           <button type="button">Favoritar</button>
           <button type="button">Remover</button>
         </div>
-      </li>
-    </ul>
-  </section>
+      </div>
+    </article>
+  </main>
 </body>
 
 </html>
