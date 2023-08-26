@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" media="screen" href="./css/style.css">
+  <link type="text/css" rel="stylesheet" media="screen" href="./css/singup.css">
   <title>Criar disco</title>
 </head>
 
@@ -17,36 +19,48 @@
       </svg>Cadastre um disco
     </h1>
     <nav>
-      <a href="cadastro.html">Cadastrar</a>
+      <a href="home.html">Home</a>
       <a href="listar.html">Listar</a>
     </nav>
   </header>
-  <form action="#" method="post">
-    <label for="album_nome">Nome do album</label>
-    <input type="text" id="album_nome">
-    <!-- TODO - adicionar função para gerar dinamicamente o campo de autores -->
-    <br>
-    <label for="autores">lista de autores (separados por ;)</label>
-    <input type="text" id="autores">
-    <br>
-    <label for="ano">Ano de lançamento</label>
-    <input type="number" id="ano">
-    <br>
-    <!-- TODO - adicionar função para gerar dinamicamente o campo de genero -->
-    <label for="genero">Generos (separados por ;)</label>
-    <input type="text" id="genero">
-    <br>
-    <label for="capa">Capa do album</label>
-    <input type="file" id="capa">
-    <br>
-    <!-- TODO - adicionar função para gerar dinamicamente o campo de faixas -->
-    <label for="faixas">Faixas (separadas por ;)</label>
-    <input type="text" id="faixas">
-    <br>
-    <label for="spotify_link">Link Spotify</label>
-    <input type="text" id="spotify_link">
-    <button type="submit">Cadastrar</button>
-  </form>
+  <main>
+    <article>
+      <form action="#" method="post">
+        <label>
+          Nome do album
+          <input type="text" name="album_nome">
+        </label>
+        <!-- TODO - adicionar função para gerar dinamicamente o campo de autores -->
+        <label>
+          lista de autores (separados por ;)
+          <input type="text" name="autores">
+        </label>
+        <label>
+          Ano de lançamento
+          <input type="number" name="ano">
+        </label>
+        <!-- TODO - adicionar função para gerar dinamicamente o campo de genero -->
+        <label>
+          Gêneros (separados por ;)
+          <input type="text" name="genero">
+        </label>
+        <label>
+          Capa do album
+          <input type="file" name="capa">
+        </label>
+        <!-- TODO - adicionar função para gerar dinamicamente o campo de faixas -->
+        <label>
+          Faixas (separadas por ;)
+          <input type="text" name="faixas">
+        </label>
+        <label>
+          Link Spotify
+          <input type="text" name="spotify_link">
+        </label>
+        <input type="submit" value="Cadastrar">
+      </form>
+    </article>
+  </main>
 </body>
 
 </html>
