@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link type="text/css" rel="stylesheet" media="screen" href="./css/style.css">
+  <script src="./scripts/lista.js"></script>
   <title>Lista de discos</title>
 </head>
 
@@ -19,27 +20,14 @@
   <main>
     <section>
       <div class="list-count">
-        <sub>Quantidade de discos na coleção: 1</sub>
+        <sub id="count"></sub>
       </div>
     </section>
-    <article>
-      <div class="card">
-        <a href="disco.html">
-          <figure>
-            <img src="./assests/cover_nina_simone.jpg" alt="Capa do album Nina Simone at town hall" width="64px">
-            <figcaption>Nina Simone at town hall</figcaption>
-          </figure>
-          <p>Nina Simone</p>
-        </a>
-        <div class="buttons">
-          <button type="button">Favoritar</button>
-          <button type="button">Remover</button>
-        </div>
-      </div>
+    <article id="article">
     </article>
   </main>
 
-  <footer>
+  <footer id="pagination">
     <nav class="pagination" role="navigation" aria-label="pagination">
       <ul class="pagination-list">
         <li>

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link type="text/css" rel="stylesheet" media="screen" href="./css/style.css">
   <link type="text/css" rel="stylesheet" media="screen" href="./css/singup.css">
+  <script src="./scripts/cadastro.js"></script>
   <title>Criar disco</title>
 </head>
 
@@ -27,29 +28,29 @@
   </header>
   <main>
     <article>
-      <form action="#" method="post">
+      <form method="post" id="formCadastro">
         <label>
           Nome do album
-          <input type="text" name="album_nome">
+          <input type="text" name="album_nome" id="album_nome">
         </label>
         <!-- TODO - adicionar função para gerar dinamicamente o campo de autores -->
         <label>
           lista de autores (separados por ;)
-          <input type="text" name="autores">
+          <input type="text" name="autores" id="autores">
         </label>
         <label>
           Ano de lançamento
-          <input type="number" name="ano">
+          <input type="number" name="ano" id="ano">
         </label>
         <!-- TODO - adicionar função para gerar dinamicamente o campo de genero -->
         <label>
           Gêneros (separados por ;)
-          <input type="text" name="genero">
+          <input type="text" name="genero" id="genero">
         </label>
 
         <div class="file has-name is-centered is-info is-boxed">
           <label class="file-label external">
-            <input class="file-input" type="file" name="resume">
+            <input class="file-input" type="file" name="cover" id="cover">
             <span class="file-cta">
               <span class="file-icon">
                 <i class="fas fa-upload"></i>
@@ -58,8 +59,7 @@
                 Capa do álbum
               </span>
             </span>
-            <span class="file-name">
-              Screen Shot 2017-07-29 at 15.54.25.png
+            <span class="file-name" id="file_name">
             </span>
           </label>
         </div>
@@ -70,11 +70,11 @@
         <!-- TODO - adicionar função para gerar dinamicamente o campo de faixas -->
         <label>
           Faixas (separadas por ;)
-          <input type="text" name="faixas">
+          <input type="text" name="faixas" id="faixas">
         </label>
         <label>
           Link Spotify
-          <input type="text" name="spotify_link">
+          <input type="text" name="spotify_link" id="spotify_link">
         </label>
         <input type="submit" value="Cadastrar">
       </form>
